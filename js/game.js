@@ -53,7 +53,18 @@ let models = {
         obj: "models/shotgun.obj",
         mtl: "models/shotgun.mtl",
         mesh: null
-    }
+    },
+    mushroom_red: {
+        obj: "models/mushroom_red.obj",
+        mtl: "models/mushroom_red.mtl",
+        mesh: null
+    },
+    mushroom_redTall: {
+        obj: "models/mushroom_redTall.obj",
+        mtl: "models/mushroom_redTall.mtl",
+        mesh: null
+    },
+
 };
 
 //Индексация мешей
@@ -433,23 +444,98 @@ function onResourcesLoaded() {
     meshes["grass75"] = models.grass.mesh.clone();
     meshes["grass76"] = models.grass.mesh.clone();
     meshes["grass77"] = models.grass.mesh.clone();
+    meshes["grass78"] = models.grass.mesh.clone();
+    meshes["grass79"] = models.grass.mesh.clone();
+    meshes["grass80"] = models.grass.mesh.clone();
+    meshes["grass81"] = models.grass.mesh.clone();
+    meshes["grass82"] = models.grass.mesh.clone();
+    meshes["grass83"] = models.grass.mesh.clone();
+    meshes["grass84"] = models.grass.mesh.clone();
+    meshes["grass85"] = models.grass.mesh.clone();
+    meshes["grass86"] = models.grass.mesh.clone();
+    meshes["grass87"] = models.grass.mesh.clone();
+    meshes["grass88"] = models.grass.mesh.clone();
+    meshes["grass89"] = models.grass.mesh.clone();
+    meshes["grass90"] = models.grass.mesh.clone();
+    meshes["grass91"] = models.grass.mesh.clone();
+    meshes["grass92"] = models.grass.mesh.clone();
+    meshes["grass93"] = models.grass.mesh.clone();
+    meshes["grass94"] = models.grass.mesh.clone();
+    meshes["grass95"] = models.grass.mesh.clone();
+    meshes["grass96"] = models.grass.mesh.clone();
+    meshes["grass97"] = models.grass.mesh.clone();
+    meshes["grass98"] = models.grass.mesh.clone();
+    meshes["grass99"] = models.grass.mesh.clone();
+    meshes["grass100"] = models.grass.mesh.clone();
 
+
+    meshes["mushroom_red0"] = models.mushroom_red.mesh.clone();
+    meshes["mushroom_red1"] = models.mushroom_red.mesh.clone();
+    meshes["mushroom_red2"] = models.mushroom_red.mesh.clone();
+    meshes["mushroom_red3"] = models.mushroom_red.mesh.clone();
+    meshes["mushroom_red4"] = models.mushroom_red.mesh.clone();
+    meshes["mushroom_red5"] = models.mushroom_red.mesh.clone();
+    meshes["mushroom_red6"] = models.mushroom_red.mesh.clone();
+    meshes["mushroom_red7"] = models.mushroom_red.mesh.clone();
+    meshes["mushroom_red8"] = models.mushroom_red.mesh.clone();
+    meshes["mushroom_red9"] = models.mushroom_red.mesh.clone();
+    meshes["mushroom_red10"] = models.mushroom_red.mesh.clone();
+    meshes["mushroom_red11"] = models.mushroom_red.mesh.clone();
+    meshes["mushroom_red12"] = models.mushroom_red.mesh.clone();
+    meshes["mushroom_red13"] = models.mushroom_red.mesh.clone();
+    meshes["mushroom_red14"] = models.mushroom_red.mesh.clone();
+    meshes["mushroom_red15"] = models.mushroom_red.mesh.clone();
+    meshes["mushroom_red16"] = models.mushroom_red.mesh.clone();
+    meshes["mushroom_red17"] = models.mushroom_red.mesh.clone();
+    meshes["mushroom_red18"] = models.mushroom_red.mesh.clone();
+    meshes["mushroom_red19"] = models.mushroom_red.mesh.clone();
+    meshes["mushroom_red20"] = models.mushroom_red.mesh.clone();
+
+    meshes["mushroom_redTall0"] = models.mushroom_redTall.mesh.clone();
+    meshes["mushroom_redTall1"] = models.mushroom_redTall.mesh.clone();
+    meshes["mushroom_redTall2"] = models.mushroom_redTall.mesh.clone();
+    meshes["mushroom_redTall3"] = models.mushroom_redTall.mesh.clone();
+    meshes["mushroom_redTall4"] = models.mushroom_redTall.mesh.clone();
+    meshes["mushroom_redTall5"] = models.mushroom_redTall.mesh.clone();
+    meshes["mushroom_redTall6"] = models.mushroom_redTall.mesh.clone();
+    meshes["mushroom_redTall7"] = models.mushroom_redTall.mesh.clone();
+    meshes["mushroom_redTall8"] = models.mushroom_redTall.mesh.clone();
+    meshes["mushroom_redTall9"] = models.mushroom_redTall.mesh.clone();
+    meshes["mushroom_redTall10"] = models.mushroom_redTall.mesh.clone();
 
     meshes["playerweapon"] = models.pistol.mesh.clone();
     meshes["playerweapon"].position.set(0,2,0);
     meshes["playerweapon"].scale.set(10,10,10);
     scene.add(meshes["playerweapon"]);
 
+    let size;
     //Ставим траву
-    for(let i = 0; i<78; i++){
+    for(let i = 0; i<101; i++){
         meshes["grass" + i].position.set(getRandomFloat(-25, 25), 0, getRandomFloat(-25, 25));
         meshes["grass" + i].scale.set(getRandomFloat(2, 5), getRandomFloat(2, 5), getRandomFloat(2, 5));
         meshes["grass" + i].rotation.y += Math.PI/randomInteger(2, 10);
         scene.add(meshes["grass" + i]);
     }
 
+    //Ставим грибы
+    for(let i = 0; i<21; i++){
+        meshes["mushroom_red" + i].position.set(getRandomFloat(-20, 20), 0, getRandomFloat(-20, 20));
+        size = getRandomFloat(1.5, 2.5);
+        meshes["mushroom_red" + i].scale.set(size, size, size);
+        meshes["mushroom_red" + i].rotation.y += Math.PI/randomInteger(2, 10);
+        scene.add(meshes["mushroom_red" + i]);
+    }
+    for(let i = 0; i<11; i++){
+        meshes["mushroom_redTall" + i].position.set(getRandomFloat(-10, 10), 0, getRandomFloat(-10, 10));
+        size = getRandomFloat(1.5, 3);
+        meshes["mushroom_redTall" + i].scale.set(size, size, size);
+        meshes["mushroom_redTall" + i].rotation.y += Math.PI/randomInteger(2, 10);
+        scene.add(meshes["mushroom_redTall" + i]);
+    }
+
+
     // Ставим лес pine
-    let size;
+
     let randomPositionPine = 40;
     for(let i = 0; i<19; i++){
         meshes["pine" + i].position.set(randomInteger(-randomPositionPine, randomPositionPine), 0, randomInteger(-randomPositionPine, randomPositionPine));
@@ -458,6 +544,7 @@ function onResourcesLoaded() {
         meshes["pine1"].scale.set(20, 20, 20);
         scene.add(meshes["pine" + i]);
     }
+
     //pine crooked и камни
     for(let i = 0; i<15; i++){
         meshes["pineCrooked" + i].position.set(randomInteger(-randomPositionPine, randomPositionPine), 0, randomInteger(-randomPositionPine, randomPositionPine));
@@ -467,6 +554,7 @@ function onResourcesLoaded() {
         meshes["pineCrooked1"].scale.set(20, 20, 20);
         scene.add(meshes["pineCrooked" + i]);
     }
+
     for(let i = 0; i<26; i++){
         meshes["rocks" + i].position.set(randomInteger(-randomPositionPine, randomPositionPine), 0, randomInteger(-randomPositionPine, randomPositionPine));
         size = getRandomFloat(2, 5);
@@ -544,15 +632,15 @@ function animate(){
         camera.rotation.z
     );
     torch.position.set(
-        camera.position.x - Math.sin(camera.rotation.y) * 0.75,
-        camera.position.y - 0.38 + Math.sin(time*4 + camera.position.x + camera.position.z)*0.01,
-        camera.position.z + Math.cos(camera.rotation.y + Math.PI/6) * 0.75
+        camera.position.x,  /*Math.sin(camera.rotation.y) * 0.75,*/
+        camera.position.y,  /*- 0.38 + Math.sin(time*4 + camera.position.x + camera.position.z)*0.01,*/
+        camera.position.z  /*+ Math.cos(camera.rotation.y + Math.PI/6) * 0.75*/
     );
 
     torchLookAtBox.position.set(
-        camera.position.x - Math.sin(camera.rotation.y) * 5,
+        camera.position.x - Math.sin(camera.rotation.y) * 10,
         camera.position.y - 0.2,
-        camera.position.z + Math.cos(camera.rotation.y) * 5
+        camera.position.z + Math.cos(camera.rotation.y) * 10
     );
     // torchLookAtBox.rotation.set(
     //     camera.rotation.x,
